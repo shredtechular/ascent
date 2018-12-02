@@ -1,0 +1,90 @@
+// --------------------------------------------------
+// Footer
+// --------------------------------------------------
+
+footer {
+    width: 100%;
+    background:$color-dark;
+    color:#fff;
+    position: relative;
+    margin-top: 90px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: {
+        image: url(/assets/img/footer-bg-small.jpg);
+        repeat: no-repeat;
+        size: cover;
+        position:left top;
+    }
+
+    @include breakpoint(medium up) {
+        min-height: 550px;
+        padding-top: 140px;
+        padding-bottom: 130px;
+        margin-top: 110px;
+        background: {
+            image: url(/assets/img/footer-bg.jpg);
+            repeat: no-repeat;
+            size: cover;
+            position:left top;
+        }
+    }
+
+    .button {
+        margin-top: 50px;
+    }
+
+    h2 {
+        font-size: 22px;
+        color: #FFFFFF;
+        line-height: 24px;
+        &:after {
+            display: none;
+        }
+        @include breakpoint(medium up) {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+    p {
+
+        @include breakpoint(medium up) {
+            font-size: 30px;
+            line-height: 1.2;
+        }
+    }
+}
+
+$gotop-height: 50px;
+.gotop {
+    display: inline-block;
+    position: absolute;
+    top: -$gotop-height;
+    height: $gotop-height;
+    cursor: pointer;
+    &:after {
+        display: inline-block;
+        content:'';
+        height: $gotop-height - 20;
+        border-left: solid 1px $color-dark;
+        width: 0px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -0.5px;
+    }
+}
+
+$footer-gutters:0;
+.footer-content-wrapper {
+    @include grid-row;
+}
+
+.footer-content {
+    @include grid-column(6);
+    @include grid-column-position(center);
+    @include breakpoint(small only) {
+        @include grid-column(10);
+        @include grid-column-position(center);
+    }
+}

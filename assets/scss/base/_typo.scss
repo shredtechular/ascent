@@ -1,0 +1,309 @@
+@font-face{
+    font-family:"Baskerville W01 Regular_705699";
+    src:url("/assets/fonts/8dc59876-75a4-4e80-bd1a-735d5f043beb.eot?#iefix");
+    src:url("/assets/fonts/8dc59876-75a4-4e80-bd1a-735d5f043beb.eot?#iefix") format("eot"),url("/assets/fonts/9d829c2e-8420-477a-8b80-803b796e3253.woff2") format("woff2"),url("/assets/fonts/9df317a3-a79e-422e-b4e2-35ccd29cd5b7.woff") format("woff"),url("/assets/fonts/32d18512-4cc1-4c1c-a041-e595f26d1b96.ttf") format("truetype"),url("/assets/fonts/cf682c43-15a5-45c0-934e-8f899e561e1f.svg#cf682c43-15a5-45c0-934e-8f899e561e1f") format("svg");
+}
+@font-face{
+    font-family:"Baskerville W01 Italic";
+    src:url("/assets/fonts/f0bf387a-6de1-402c-a63c-04664681e924.eot?#iefix");
+    src:url("/assets/fonts/f0bf387a-6de1-402c-a63c-04664681e924.eot?#iefix") format("eot"),url("/assets/fonts/ed8ac168-5be2-4127-b1b2-976a1a017786.woff2") format("woff2"),url("/assets/fonts/11514d41-5158-4a68-8f27-9202cc7fc001.woff") format("woff"),url("/assets/fonts/b62c4ed0-7687-4a1b-840d-00a34f2d16a2.ttf") format("truetype"),url("/assets/fonts/ede983d0-3356-4a76-956b-4131479e2d55.svg#ede983d0-3356-4a76-956b-4131479e2d55") format("svg");
+}
+@font-face{
+    font-family:"Trade Gothic W01 Light";
+    src:url("/assets/fonts/1d699af3-0e50-4c4b-a343-42d071e85714.eot?#iefix");
+    src:url("/assets/fonts/1d699af3-0e50-4c4b-a343-42d071e85714.eot?#iefix") format("eot"),url("/assets/fonts/5414f75e-5cb8-4357-88e5-5a294424c859.woff2") format("woff2"),url("/assets/fonts/537b145a-6a7d-4787-81d9-7228d3a42458.woff") format("woff"),url("/assets/fonts/8e50278c-45cd-4808-b774-24767d958f17.ttf") format("truetype"),url("/assets/fonts/d918b947-5fcb-42e2-8286-a98a801876de.svg#d918b947-5fcb-42e2-8286-a98a801876de") format("svg");
+}
+@font-face{
+    font-family:"Trade Gothic W01 Bold";
+    src:url("/assets/fonts/2e9af08f-0faf-45e3-9767-78a700434af3.eot?#iefix");
+    src:url("/assets/fonts/2e9af08f-0faf-45e3-9767-78a700434af3.eot?#iefix") format("eot"),url("/assets/fonts/d2e623ca-efc6-4557-ae55-ebb786065dcf.woff2") format("woff2"),url("/assets/fonts/f51d24dd-8256-43c6-ba1a-6aeae9d3f262.woff") format("woff"),url("/assets/fonts/955ee494-66b2-4eb2-8f19-bc3a088df16d.ttf") format("truetype"),url("/assets/fonts/d5153ad4-7c93-4757-9147-640e69ec4801.svg#d5153ad4-7c93-4757-9147-640e69ec4801") format("svg");
+}
+
+$font-trade-bold: "Trade Gothic W01 Bold";
+$font-trade-light: "Trade Gothic W01 Light";
+$font-baskerville-italic: "Baskerville W01 Italic";
+$font-baskerville: "Baskerville W01 Regular_705699";
+
+
+p {
+    font-family: $font-baskerville;
+}
+
+.col-text {
+    p {
+        font-size: 26px;
+        line-height: 1.5;
+        @include breakpoint(small only) {
+            font-size: 18px;
+        }
+    }
+}
+
+
+//
+// Buttons
+//
+.button {
+  font-family: $font-trade-light;
+  font-size: 22px;
+  line-height: 2.4;
+}
+
+//
+// Footer
+//
+footer {
+    p {
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.gotop {
+    color: $color-dark;
+    font-family: $font-trade-bold;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+//
+// Hero
+//
+.hero {
+    strong {
+        font-family: $font-baskerville;
+        font-size: 20px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 63px;
+        font-family: $font-trade-bold;
+        color: #FFFFFF;
+        @include breakpoint(medium only) {
+            font-size: 45px;
+        }
+    }
+}
+
+
+// --------------------------------------------------
+// Headings
+// --------------------------------------------------
+
+h2 {
+    font-family: $font-trade-bold;
+    font-size: 36px;
+    color: $black;
+    line-height: 61px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+    @include breakpoint(small only) {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-top: solid 1px $color-primary;
+        width: 170px;
+        left: 50%;
+        bottom:0;
+        transform: translate(-50%, 0);
+        @include breakpoint(small only) {
+            width: 130px;
+        }
+    }
+}
+
+
+//
+// Info section
+//
+.text-block {
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #323233;
+    }
+}
+
+
+//
+// Navigation and contact
+//
+.navigation {
+    a {
+        font-family: $font-trade-bold;
+        font-size:63px;
+        line-height: 1.2;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+}
+
+.contact-form {
+    fieldset {
+        font-family: $font-baskerville;
+        font-size: 26px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 1.2;
+    }
+}
+
+//
+// Section intro
+//
+.section-intro {
+    p {
+        font-size: 30px;
+        color: #323233;
+        letter-spacing: 0;
+        line-height: 1.2;
+    }
+}
+
+.section-intro-horiz {
+    p {
+        font-size: 26px;
+        line-height: 1.2;
+        color: $black;
+    }
+}
+
+
+//
+// Services
+//
+.services {
+    .service {
+        h3 {
+            font-family: $font-trade-bold;
+            font-size: 28px;
+            color: #323233;
+            line-height: 61px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 25px;
+            color: #323233;
+            letter-spacing: 0;
+            line-height: 32px;
+        }
+    }
+}
+
+//
+// Team
+//
+.team-member {
+    .member-info {
+        .position {
+            font-family: $font-baskerville;
+            font-size: 14px;
+        }
+
+        strong {
+            font-family: $font-trade-bold;
+            text-transform: uppercase;
+            font-size: 22px;
+            line-height: 32px;
+        }
+    }
+}
+
+
+//
+// Values
+//
+.values-list {
+    h1 {
+        text-transform: uppercase;
+        font-family: $font-trade-bold;
+        font-size: 63px;
+        color: $black;
+    }
+}
+
+
+//
+// Services page
+//
+.service-block {
+    h1 {
+        font-family: $font-trade-bold;
+        font-size: 35px;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include breakpoint(medium only) {
+            font-size: 50px;
+        }
+
+        @include breakpoint(large) {
+            font-size: 76px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        @include breakpoint(medium up) {
+            font-size: 25px;
+        }
+    }
+
+    .service-quote {
+        em {
+            font-size: 38px;
+            line-height: 1.4;
+            font-family: $font-baskerville-italic;
+            text-align: center;
+            @include breakpoint(small only) {
+                font-size: 28px;
+            }
+        }
+        .quote-author {
+            text-transform: uppercase;
+            font-family: $font-trade-bold;
+            font-size: 22px;
+            @include breakpoint(small only) {
+                font-size: 18px;
+            }
+        }
+
+        .quote-author-position {
+            font-family: $font-baskerville;
+            font-size: 18px;
+            @include breakpoint(small only) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.capabilities-list {
+    li {
+        font-family: $font-trade-bold;
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        @include breakpoint(small only) {
+            font-size: 18px;
+        }
+    }
+}

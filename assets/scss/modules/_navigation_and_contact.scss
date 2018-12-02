@@ -1,0 +1,280 @@
+// --------------------------------------------------
+// Navigation and contact form + the overlay
+// --------------------------------------------------
+
+.overlay {
+    top: -200%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:$color-dark;
+    z-index: 100;
+    overflow: auto;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="682" height="173" viewBox="0 0 682 173" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h689v173H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#AA8F5E" mask="url(#b)" d="M556.746 79.17L370.683 247.35l-9.388-10.387L470.58 138.18 338.816 18.95 152.76 187.123l-9.387-10.386 48.314-43.67-61.176-57.083L5.98 187.12l-9.322-10.446 133.97-119.558.082.09.093-.1 71.31 66.538L338.778.114l.043.046.043-.047L481.02 128.746 556.7 60.34l.034.038.034-.038 157.118 141.658-9.374 10.398L556.746 79.17"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 658px auto;
+    @include breakpoint(small only) {
+        background-image: none;
+    }
+}
+
+
+
+.navigation-and-contact {
+    @include grid-row;
+    position: relative;
+
+    @include breakpoint(small only) {
+        fieldset {
+            display: none;
+        }
+    }
+
+
+}
+
+
+
+.navigation {
+    @include grid-column(6);
+    @include breakpoint(medium only) {
+        @include grid-column(4);
+    }
+    @include breakpoint(small only) {
+        text-align: center;
+        @include grid-column(12);
+    }
+    ul {
+        margin: 150px 0 0 0;
+        padding: 0;
+        list-style-type: none;
+
+
+        @include breakpoint(medium up) {
+            padding-left: 100px;
+        }
+        @include breakpoint(medium only) {
+            padding-left: 0;
+            margin-top: 180px;
+        }
+
+    }
+    li {
+        margin: 0 0 10px 0;
+        padding: 0;
+    }
+    a {
+        @include breakpoint(medium only) {
+            font-size: 34px;
+        }
+        @include breakpoint(small only) {
+            font-size: 40px;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.contact-block {
+    @include grid-column(6);
+    @include breakpoint(medium only) {
+        @include grid-column(8);
+    }
+    @include breakpoint(small only) {
+        @include grid-column(12);
+        text-align: center;
+    }
+    color: #fff;
+}
+
+.contact-form {
+    margin-top: 150px;
+    @include breakpoint(medium only) {
+        margin-top: 180px;
+    }
+    @include breakpoint(small only) {
+        margin-top: 0;
+    }
+
+    h2 {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        &:after {
+            display: none;
+        }
+    }
+
+    fieldset {
+        border: solid 1px $color-primary;
+        margin: 15px 0 0 0;
+        padding: 30px 80px;
+
+        @include breakpoint(medium only) {
+            font-size: 22px;
+             padding: 30px 40px;
+        }
+
+        @include breakpoint(small only) {
+            padding: 0 10px;
+        }
+    }
+    div {
+        margin: 10px 0px;
+        line-height: 2.3;
+    }
+    .button {
+        margin-top: 25px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="phone"] {
+        background:transparent;
+        border:0;
+        text-align: center;
+        color: $color-primary;
+        font-family: $font-baskerville;
+        font-size: 24px;
+        outline: none;
+        border-bottom: solid 1px $color-gray;
+        display: inline-block;
+        width: auto;
+        padding: 10px 0;
+        height: 35px;
+        &:focus {
+            border-color: $color-primary;
+        }
+    }
+
+    input[type="email"] {
+        width: 280px;
+    }
+
+    ::-webkit-input-placeholder {
+      color: $color-gray;
+      font-family: $font-trade-light;
+      font-size: 10px;
+    }
+    ::-moz-placeholder {
+      color: $color-gray;
+      font-family: $font-trade-light;
+      font-size: 10px;
+    }
+    :-ms-input-placeholder {
+      color: $color-gray;
+      font-family: $font-trade-light;
+      font-size: 10px;
+    }
+    :-moz-placeholder {
+      color: $color-gray;
+      font-family: $font-trade-light;
+      font-size: 10px;
+    }
+}
+
+.other-ways {
+    h4 {
+        font-family: $font-baskerville;
+        font-size: 22px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        margin: 35px 0 15px 0;
+    }
+    p {
+        font-family: $font-baskerville;
+        font-size: 18px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        line-height: 1.9;
+    }
+    a {
+        color: $white;
+    }
+}
+
+
+
+//
+// Contact page
+//
+.contact-section {
+    margin: 30px 0 0 0;
+    padding-bottom: 120px;
+    @include grid-row();
+    .leform {
+        @include grid-column(12,30px);
+        @include breakpoint(medium up) {
+            @include grid-column(6,80px);
+        }
+    }
+    .sidebar {
+        @include grid-column(12,30px);
+        @include breakpoint(medium up) {
+            @include grid-column(4,30px);
+        }
+    }
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="682" height="173" viewBox="0 0 682 173" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h689v173H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#AA8F5E" mask="url(#b)" d="M556.746 79.17L370.683 247.35l-9.388-10.387L470.58 138.18 338.816 18.95 152.76 187.123l-9.387-10.386 48.314-43.67-61.176-57.083L5.98 187.12l-9.322-10.446 133.97-119.558.082.09.093-.1 71.31 66.538L338.778.114l.043.046.043-.047L481.02 128.746 556.7 60.34l.034.038.034-.038 157.118 141.658-9.374 10.398L556.746 79.17"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 698px auto;
+}
+
+.contact-form.in-page {
+    margin-top: 0;
+    @include breakpoint(small only) {
+        .other-ways {
+            display: none;
+        }
+    }
+    fieldset {
+        color: $black;
+    }
+    h2 {
+        color: $black;
+        margin-top: 30px;
+    }
+}
+
+.sidebar {
+    h2 {
+        margin: 30px 0 0 0;
+        padding: 0;
+        &:after {
+            display: none;
+        }
+    }
+    p {
+        font-size: 18px;
+    }
+    a {
+        color: $color-primary;
+    }
+}
+
+.social-links {
+    a {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 5px;
+        transition: opacity 250ms ease;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    svg {
+        height: 22px;
+        fill: $color-primary
+    }
+}
+
+.we-got-message {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #038615;
+}

@@ -1,0 +1,47 @@
+// --------------------------------------------------
+// That block with text on the left and thumbnails on the right
+// --------------------------------------------------
+.text-and-pictures {
+    @include flex-grid-row();
+    padding: 60px 0;
+}
+
+.col-text {
+    @include breakpoint(small only) {
+         @include flex-grid-column(12,30px);
+    }
+
+    @include breakpoint(medium up) {
+        @include flex-grid-column(6,200px);
+    }
+    @include breakpoint(medium only) {
+        @include flex-grid-column(6,50px);
+    }
+    align-self: center;
+
+    .button {
+        @include breakpoint(medium up) {
+            margin-top: 60px;
+        }
+    }
+}
+.col-images {
+    @include breakpoint(small only) {
+         @include flex-grid-column(12,30px);
+         margin-top: 30px;
+    }
+    @include flex-grid-column(6,30px);
+    img {
+        width: 100%;
+    }
+    a {
+        @include grid-column(12);
+        &.half {
+            @include breakpoint(small only) {
+                 @include grid-column(12);
+            }
+            @include grid-column(6);
+            margin-top: 30px;
+        }
+    }
+}

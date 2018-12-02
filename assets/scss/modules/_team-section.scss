@@ -1,0 +1,96 @@
+// --------------------------------------------------
+// Team members
+// --------------------------------------------------
+
+.team-wrapper {
+    @include grid-row();
+    padding-bottom: 80px;
+}
+
+
+$team-column-gutter: 50px;
+
+.team-member {
+    position: relative;
+    @include breakpoint(medium up) {
+        @include grid-column(6, $team-column-gutter);
+        padding-bottom: 60px;
+    }
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 0;
+
+        @include breakpoint(medium) {
+            width: 90%;
+        }
+        @include breakpoint(large) {
+            width: 70%;
+        }
+    }
+
+    .member-info {
+        width: 100%;
+        z-index: 1;
+        top: 50%;
+        border: solid 3px $color-primary;
+        background:$color-beige;
+
+
+        @include breakpoint(small only) {
+            border:0;
+            padding: 10px 0 0 0;
+            margin-bottom: 30px;
+        }
+
+        @include breakpoint(medium) {
+            right: $team-column-gutter/4;
+            width: 50%;
+            padding: 30px;
+            position: absolute;
+        }
+
+        @include breakpoint(large) {
+            right: $team-column-gutter;
+            width: 40%;
+            position: absolute;
+            padding: 40px;
+        }
+
+        .position {
+            display: inline-block;
+            margin-bottom: 15px;
+
+            @include breakpoint(small only) {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            @include breakpoint(medium) {
+                font-size: 13px;
+            }
+            @include breakpoint(large) {
+                font-size: 20px;
+            }
+        }
+
+        strong {
+            display: inline-block;
+
+            @include breakpoint(small only) {
+                width: 100%;
+                text-align: center;
+            }
+            @include breakpoint(medium) {
+                font-size: 26px;
+                line-height: 32px;
+                max-width: 100px;
+            }
+            @include breakpoint(large) {
+                font-size: 36px;
+                line-height: 51px;
+            }
+
+        }
+    }
+}

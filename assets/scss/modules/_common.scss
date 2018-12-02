@@ -1,0 +1,133 @@
+// --------------------------------------------------
+// Common stuff
+// --------------------------------------------------
+
+
+.shade-full {
+  width: 100%;
+  background:$color-beige;
+  padding-bottom: 100px;
+}
+
+.shade-full + footer,
+.contact-section + footer {
+    margin-top: 0 !important;
+}
+
+.overflowhidden {
+    overflow: hidden;
+    height: 100%;
+}
+
+.sticky {
+    display: none;
+    &.is-stuck {
+        display: block;
+    }
+}
+
+.page-toc {
+    position: absolute;
+    top: 0;
+    left: 15px;
+
+
+    span {
+        white-space: nowrap;
+        font-family: $font-trade-bold;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1;
+        background:red;
+        padding: 4px 15px 4px 20px;
+        color: $color-primary;
+        position: relative;
+        left: -10px;
+        z-index: 22;
+        opacity: 0;
+        display: inline-block;
+
+        background: lighten($color-primary, 40%);
+        border: 1px solid #AA8F5E;
+        border-radius: 15px;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            border-radius:50%;
+            width: 10px;
+            height: 10px;
+            background:$color-primary;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+    }
+    a {
+        padding: 0 !important;
+        margin: 0;
+        position: relative;
+        font-size: 12px;
+        height: 15px;
+        &:before {
+            content: '';
+            display: inline-block;
+            border-radius:50%;
+            width: 11px;
+            height: 11px;
+            background:$black;
+            position: absolute;
+            left: -4px;
+            top: 5px;
+        }
+        &.active {
+            span {
+                opacity: 1;
+            }
+        }
+        &:not(.active):hover {
+            span {
+                opacity: 0.5;
+            }
+        }
+    }
+    ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        &:before {
+            content:'';
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 3px;
+            background:$black;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+    }
+
+    li {
+        margin: 0 0 20px 0;
+        padding: 0;
+
+        font-size: 0;
+
+        &:first-child {
+            a {
+                top: -5px;
+            }
+        }
+        &:last-child {
+            a {
+                top: 5px;
+            }
+        }
+    }
+}
+
+#toc-wrapper {
+    position: relative;
+}

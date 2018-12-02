@@ -1,0 +1,11 @@
+- link: Home
+  url: /
+
+- link: About
+  url: /about
+
+- link: Services
+  url: /services
+
+- link: Contact
+  url: /contact

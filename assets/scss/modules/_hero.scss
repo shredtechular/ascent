@@ -1,0 +1,71 @@
+// --------------------------------------------------
+// Hero
+// --------------------------------------------------
+.hero {
+    width: 100%;
+    background:$color-dark;
+    min-height: 630px;
+    padding-top: 180px;
+    text-align: center;
+    color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="682" height="173" viewBox="0 0 682 173" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h689v173H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#AA8F5E" mask="url(#b)" d="M556.746 79.17L370.683 247.35l-9.388-10.387L470.58 138.18 338.816 18.95 152.76 187.123l-9.387-10.386 48.314-43.67-61.176-57.083L5.98 187.12l-9.322-10.446 133.97-119.558.082.09.093-.1 71.31 66.538L338.778.114l.043.046.043-.047L481.02 128.746 556.7 60.34l.034.038.034-.038 157.118 141.658-9.374 10.398L556.746 79.17"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 698px auto;
+    @include breakpoint(small only) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    &.no-cta {
+        min-height: 547px;
+        @include breakpoint(small only) {
+            min-height: 0;
+        }
+    }
+    &.simple {
+        min-height: 375px;
+        background-image: none;
+        padding-top: 140px;
+        @include breakpoint(small only) {
+            min-height: 0;
+        }
+    }
+    @include breakpoint(small only) {
+        padding-top: 100px;
+        min-height: 0;
+        padding-bottom: 100px;
+        background-size: auto 60px;
+    }
+    strong {
+        opacity: 0.7;
+        @include breakpoint(small only) {
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+    h1 {
+        margin-top: 7px;
+        @include breakpoint(small only) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+    }
+    .button {
+        margin-top: 40px;
+    }
+}
+
+.inner-hero {
+    width: 100%;
+    height: 300px;
+    background-image: url(/assets/img/desk-cup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @include breakpoint(small only) {
+        display: none;
+    }
+    @include breakpoint(medium up) {
+        height: 650px;
+    }
+}

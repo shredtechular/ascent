@@ -1,0 +1,165 @@
+// --------------------------------------------------
+// Buttons
+// --------------------------------------------------
+
+.button {
+  outline: none;
+  color: #AA8F5E;
+  letter-spacing: 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+  display: inline-block;
+  margin: 0;
+  padding: 0px 20px 0px 20px;
+}
+
+  .button::after {
+    content: '';
+    width: 80%;
+    left: 50%;
+    height: 1px;
+    bottom: 0;
+    transform: translatex(-50%);
+    transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+    display: block;
+    position: absolute;
+    background: $color-primary;
+}
+
+  .button span {
+    display: block;
+    position: absolute;
+    transition: all 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    width: 100%;
+    top: 0;
+    left: 0; }
+
+    .button span::before,
+    .button span::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: #DAA25A;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9); }
+
+    .button span:first-child {
+      height: 100%; }
+      .button span:first-child::before,
+      .button span:first-child::after {
+        width: 1px;
+        height: 100%;
+        bottom: 0;
+        transform: scale3d(1, 0, 1);
+        transform-origin: bottom center;
+        transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+      .button span:first-child::before {
+        left: 0; }
+
+      .button span:first-child::after {
+        right: 0; }
+
+    .button span:last-child {
+      width: 100%;
+      height: 1px; }
+
+      .button span:last-child::before, .button span:last-child::after {
+        height: 1px;
+        width: 100%;
+        bottom: 0;
+        transform: scale3d(0, 1, 1);
+        transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+      .button span:last-child::before{
+        left: 0;
+        transform-origin: bottom left; }
+      .button span:last-child::after{
+        right: 0;
+        transform-origin: bottom right; }
+.button {
+    &:hover {
+        opacity: 1;
+        outline: 0;
+        color: #333E48 !important;
+        text-decoration: none;
+        transition: color 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+    }
+    &.ondark:hover {
+        color: #fff !important;
+    }
+}
+
+    .button:hover::after {
+      width: 100%;
+      background: #232F39;
+      transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .button.ondark:hover::after {
+      width: 100%;
+      background: #fff;
+      transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .button:hover span:first-child::before,
+    .button:hover span:first-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #232F39;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .button.ondark:hover span:first-child::before,
+    .button.ondark:hover span:first-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #fff;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .button:hover span:last-child::before, .button:hover span:last-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #232F39;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .button.ondark:hover span:last-child::before,
+    .button.ondark:hover span:last-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #fff;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .navigation-and-contact .button:hover {
+      color: #fff !important;
+    }
+    .navigation-and-contact .button:hover::after {
+      width: 100%;
+      background: #fff;
+      transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+    .navigation-and-contact .button:hover span:first-child::before,
+    .navigation-and-contact .button:hover span:first-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #fff;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+
+    .navigation-and-contact .button:hover span:last-child::before,
+    .navigation-and-contact .button:hover span:last-child::after {
+      transform: scale3d(1, 1, 1);
+      background: #fff;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+
+  .button:focus {
+    color: $color-primary !important;
+    transition: all 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    }
+
+
+
+  .button.active {
+    color: #000 !important;
+    border-color: #000; }
+
+    .button.active:hover,
+    .button.active:focus {
+      background: transparent;
+  }

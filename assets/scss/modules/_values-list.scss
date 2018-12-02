@@ -1,0 +1,51 @@
+// --------------------------------------------------
+// Values blocks
+// --------------------------------------------------
+.values-list {
+    margin-bottom: 60px;
+    h1 {
+        margin-top: 7px;
+
+        @include breakpoint(small only) {
+            font-size: 22px;
+        }
+    }
+
+    p {
+        padding: 10px 30px;
+        @include breakpoint(medium up) {
+            width: 40%;
+            margin: 0 auto;
+            padding: 20px 0px;
+            font-size: 22px;
+            line-height: 1.2;
+        }
+    }
+}
+
+.value-item {
+     @include grid-row();
+    position: relative;
+    padding-bottom: 50px;
+    &:not(:first-child) {
+        margin-top: 40px;
+    }
+    &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-top: solid 1px $color-primary;
+        width: 170px;
+        left: 50%;
+        bottom:0;
+        transform: translate(-50%, 0);
+        @include breakpoint(small only) {
+            width: 130px;
+        }
+    }
+    &:last-child {
+        &:after {
+            border:0;
+        }
+    }
+}
