@@ -1,0 +1,16 @@
+{% comment %} 
+<!--
+  Markdown Section
+
+  This partial is used for generic markdown sections if they need to be placed
+  on certain areas of pages.  Currently this is used on the services page.
+  
+--> 
+{% endcomment %}
+
+{% assign mds = site.sections| where:"type","markdown"| where:"title",include.title %}
+
+{% for md in mds %}
+	{{ md.content | markdownify }}
+{% endfor %}
+

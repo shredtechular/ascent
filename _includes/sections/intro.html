@@ -1,0 +1,39 @@
+{% comment %} 
+<!--
+  Intro Section
+
+  This partial is used for sections that have an "intro" heading.  
+  "Sub-sections" can be passed into this section for the main content of the
+  section.
+  
+--> 
+{% endcomment %}
+
+{% assign intros = site.sections|where:"type","intro"|where:"title",include.title %}
+
+{% if include.class %}
+<div class="{{ include.class }}">
+{% endif %}
+
+{% for intro in intros %}
+
+	<div class="{% if intro.class %}{{ intro.class }}{% else %}section-intro-wrapper{% endif %}">
+		{% if intro.class %}
+			{{ intro.content | markdownify }}
+		{% else %}
+	    <div class="section-intro text-center">
+	      {{ intro.content | markdownify }}
+	    </div>
+	  {% endif %}
+	</div>
+
+	{% for section in intro.subsections %}
+	  {% include sections/{{ section.type }}.html title=section.title %}
+	{% endfor %}
+
+{% endfor %}
+
+{% if include.class %}
+</div>
+{% endif %}
+

@@ -1,0 +1,22 @@
+{% comment %} 
+<!--
+  Vertical List Section
+
+  This partial is used for sections that have a two column layout that consists
+  of one side text and the other side pictures.  This partial is currently used
+  on the about page.
+  
+--> 
+{% endcomment %}
+
+{% assign values = site.sections| where:"type","vert-list"| where:"title",include.title| sort: "order" %}
+
+<div class="values-list text-center">
+
+  {% for value in values %}
+    <div class="value-item">
+        {{ value.content | markdownify }}
+    </div>
+  {% endfor %}
+
+</div>

@@ -1,0 +1,33 @@
+{% comment %} 
+<!--
+  Text and Pics Section
+
+  This partial is used for sections that have a two column layout that consists
+  of one side text and the other side pictures.  This partial is currently used
+  on the about page.
+  
+--> 
+{% endcomment %}
+
+{% assign tps = site.sections|where:"type","text-and-pics"|where:"title",include.title %}
+
+{% for tp in tps %}
+
+<div class="text-and-pictures align-middle">
+  
+  <div class="col-text text-center">
+  	{{ tp.content | markdownify }}
+  </div>
+  
+  <div class="col-images">
+  	
+  	{% for img in tp.pics %}
+			<a {% if img.class %}class="{{ img.class }}"{% endif %} href="{{ img.link }}">
+				<img src="{{ img.image }}">
+			</a>
+  	{% endfor %}
+
+  </div>
+</div>
+
+{% endfor %}

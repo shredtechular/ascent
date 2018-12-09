@@ -1,0 +1,43 @@
+{% comment %} 
+<!--
+  Services Block Section
+
+  This partial is used for service sections which are pretty detailed and 
+  custom sections containing many nested html objects.  I imagine this
+  type of layout may not be resued, but if it is, then maybe a more proper name
+  can be used.  This partial is currently used on the services page.
+--> 
+{% endcomment %}
+
+{% assign services = site.sections|where:"type","services-block"|where:"title",include.title |sort: "order" %}
+
+{% for service in services %}
+
+<div class="service-block" id="{{ service.name | slugify }}" data-magellan-target="{{ service.name | slugify }}">
+  <h1>{{ service.name }}</h1>
+  <div class="service-intro align-middle">
+    <div class="intro-thumbnail">
+      <svg viewBox="{{ service.thumbnail-svg-dim }}">
+        <use xlink:href="#icon-{{ service.thumbnail }}" />
+      </svg>
+    </div>
+    <div class="intro-description">
+      <p>{{ service.intro }}</p>
+    </div>
+  </div>
+  <div class="service-description">
+    {{ service.content | markdownify }}
+  </div>
+  <div class="service-quote">
+    <div class="the-quote">
+      <em>"{{ service.quote }}"</em>
+      <strong class="quote-author">{{ service.quote-author }}</strong>
+      <span class="quote-author-position">{{ service.quote-author-title }}</span>
+    </div>
+    <div class="the-quote-image">
+      <img src="{{ service.quote-img }}" alt="{{ service.quote-img-alt }}">
+    </div>
+  </div>
+</div>
+
+{% endfor %}

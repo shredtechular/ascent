@@ -2,9 +2,20 @@
 layout: default
 ---
 
-<section class="hero no-cta">
+<section class="{% if page.hero.cta %}hero{% else %}hero no-cta{% endif %}">
     <strong>{{page.subheading}}</strong>
     <h1>{{page.heading}}</h1>
+
+{% if page.hero.cta %}
+	{% for btn in page.hero.cta %}
+  
+    <a href="{{ btn.link }}" class="button ondark">{{ btn.text }}<span></span><span></span></a>
+  
+  {% endfor %}
+{% endif %}
+
 </section>
 
-{{content}}
+{% for section in page.sections %}
+  {% include sections/{{ section.type }}.html title=section.title class=section.class %}
+{% endfor %}

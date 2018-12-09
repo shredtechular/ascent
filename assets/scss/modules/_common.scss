@@ -31,7 +31,6 @@
     top: 0;
     left: 15px;
 
-
     span {
         white-space: nowrap;
         font-family: $font-trade-bold;
@@ -96,6 +95,8 @@
         margin: 0;
         padding: 0;
         list-style-type: none;
+        display: block;
+        
         &:before {
             content:'';
             display: inline-block;

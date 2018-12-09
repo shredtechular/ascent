@@ -1,0 +1,26 @@
+{% comment %} 
+<!--
+  Table of Contents Section
+
+  This partial is used for pages/sections that have a table of contents sidebar
+  on the page.  This is currently being used on the services page.
+  
+--> 
+{% endcomment %}
+
+{% assign tocs = site.sections|where:"type","toc"|where:"title",include.title %}
+
+{% for toc in tocs %}
+<div id="toc-wrapper" >
+  <div class="page-toc hide-for-small-only" data-sticky-container id="page-toc" >
+    <nav data-sticky data-anchor="toc-wrapper" data-sticky-on="large" data-options="marginTop:9;">
+      {{ toc.content | markdownify }}
+    </nav>
+  </div>
+
+	{% for section in toc.subsections %}
+	  {% include sections/{{ section.type }}.html title=section.title %}
+	{% endfor %}
+
+</div>
+{% endfor %}

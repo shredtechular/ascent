@@ -1,0 +1,24 @@
+{% comment %} 
+<!--
+  Services Section
+
+  This partial is used to display services sections.  This section displays
+  serivces in a 3 column desktop view layout.  Currently this section is used
+  on the home page.
+  
+--> 
+{% endcomment %}
+
+{% assign services = site.sections|where:"type","services"|where:"title",include.title |sort: "order" %}
+
+<div class="services">
+  
+  {% for service in services %}
+  
+  <div class="service">
+    {{ service.content | markdownify }}
+  </div>
+  
+  {% endfor %}
+
+</div>

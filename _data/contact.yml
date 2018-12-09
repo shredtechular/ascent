@@ -1,0 +1,22 @@
+form-header: Reach Out
+contact-sidebar:
+  - header: General Inquiries
+    blurb: Say hello and ask a question
+    blurb2: 941-447-3975
+    include-email: "contact-email"
+  - header: Work for us
+    blurb: We're looking for great talent.
+    include-email: "hire-email"
+contact-email: hello@ascentcollective.co
+hire-email: hireme@ascentcollective.co
+social-header: Follow us
+social:
+  - title: facebook
+    svg-dim: "0 0 11 20"
+    link: "#"
+  - title: instagram
+    svg-dim: "0 0 56 56"
+    link: "#"
+  - title: linkedin
+    svg-dim: "0 0 20 21"
+    link: "#"

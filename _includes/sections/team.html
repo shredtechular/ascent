@@ -1,0 +1,28 @@
+{% comment %} 
+<!--
+  Team Section
+
+  This partial is used for sections that have a team layout describing team or
+  employee positions & responsibilities.  Currently, this partial is included
+  on the about page.
+  
+--> 
+{% endcomment %}
+
+{% assign people = site.sections| where:"type","team"| where:"title",include.title |sort: "order" %}
+
+<div class="team-wrapper">
+
+{% for person in people %}
+
+  <div class="team-member">
+    <img src="{{ person.image }}" alt="{{ person.image-alt }}">
+    <div class="member-info">
+      <span class="position">{{ person.position }}</span>
+      <strong>{{ person.name }}</strong>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div>

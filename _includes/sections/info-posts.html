@@ -1,0 +1,27 @@
+{% comment %} 
+<!--
+  Info Posts Section
+
+  This partial is used for sections of a page that have an "info posts"
+  section.  This partial is currently used on the home page.  
+--> 
+{% endcomment %}
+
+{% assign infos = site.sections|where:"type","info-posts"|where:"title",include.title |sort: "order" %}
+
+<div class="info-posts{% if include.class %} {{ include.class }}{% endif %}">
+  <div class="info-posts-list">
+
+	{% for info in infos %}
+
+    <div class="info-column text-block">
+    	{{ info.content | markdownify }}
+    </div>
+    <div class="info-column image-block">
+      <img src="{{ info.img }}" alt="{{ info.img-alt }}">
+    </div>
+
+	{% endfor %}
+
+  </div>
+</div>

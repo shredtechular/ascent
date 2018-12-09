@@ -1,2 +1,8 @@
-- link: Legal
-  url: #
+header: Make the ascent
+blurb: "Let's meet to talk about what we can do for your business. Coffee is on us."
+cta:
+  text: Contact us
+  link: /contact/
+links:
+  - link: Legal
+    url: #

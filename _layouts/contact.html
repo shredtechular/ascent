@@ -2,8 +2,60 @@
 layout: default
 ---
 
+{% assign contact = site.data.contact %}
+
 <section class="hero no-cta simple">
-    <h1>{{page.heading}}</h1>
+  <h1>{{page.heading}}</h1>
 </section>
 
-{{content}}
+<div class="contact-section">
+  <div class="leform">
+    <div class="contact-form in-page">
+      <h2 class="hide-for-small-only">{{ form-header }}</h2>
+      {% include components/contact-form.html %}
+    </div>
+  </div>
+  <div class="sidebar">
+  	
+  {% for sb-item in contact.contact-sidebar %}
+
+  	{% if sb-item.include-email %}
+  		{% assign emaillookup = sb-item.include-email %}
+  		{% assign email = contact[emaillookup] %}
+  	{% endif %}
+
+    <h2> {{ sb-item.header }}</h2>
+    
+    {% if sb-item.blurb %}
+    <p>{{ sb-item.blurb }}</p>
+    {% endif %}
+    
+    {% if sb-item.blurb2 %}
+    <p>
+    	{{ sb-item.blurb2 }}
+    	{% if sb-item.include-email %}
+    		<br><a href="mailto:{{ email }}">{{ email }}</a>
+    	{% endif %}
+    </p>
+    {% else %}
+    <p><a href="mailto:{{ email }}">{{ email }}</a></p>
+    {% endif %}
+
+  {% endfor %}
+
+    <h2>{{ contact.social-header }}</h2>
+    <div class="social-links">
+    	
+    	{% for social in contact.social %}
+      <a href="{{ social.link }}">
+        <svg viewBox="{{ social.svg-dim }}">
+          <use xlink:href="#icon-{{ social.title }}" />
+        </svg>
+      </a>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</div>
+
