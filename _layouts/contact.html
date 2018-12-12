@@ -11,7 +11,12 @@ layout: default
 <div class="contact-section">
   <div class="leform">
     <div class="contact-form in-page">
-      <h2 class="hide-for-small-only">{{ form-header }}</h2>
+      {% if page.title == "Contact" %}
+        <h2 class="hide-for-small-only">{{ contact.form-header }}</h2>
+      {% else %}
+        <h2 class="hide-for-small-only">{{ contact.thank-you-header }}</h2>
+        <p class="we-got-message">{{ contact.thank-you-blurb }}</p>
+      {% endif %}
       {% include components/contact-form.html %}
     </div>
   </div>

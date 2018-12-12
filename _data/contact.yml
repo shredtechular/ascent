@@ -1,4 +1,6 @@
 form-header: Reach Out
+thank-you-header: "Thank you!"
+thank-you-blurb: "We got your message!"
 contact-sidebar:
   - header: General Inquiries
     blurb: Say hello and ask a question
